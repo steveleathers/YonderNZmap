@@ -14,11 +14,11 @@
     <script>
 
       L.mapbox.accessToken = 'pk.eyJ1IjoibWlnY29tIiwiYSI6ImNrUllYc3MifQ.isgDkadcGHvdQKkSC1ohfQ';
-      var map = L.mapbox.map('map-one', 'examples.map-i86l3621', {scrollWheelZoom: false, legendControl:{position: 'bottomright'}}).setView([170.457, -45.7388], 12);
+      var map = L.mapbox.map('map-one', 'examples.map-i86l3621', {scrollWheelZoom: false, legendControl:{position: 'bottomright'}}).setView([-45.7388, 170.457], 12);
       map.legendControl.addLegend('<strong>Legend content</strong>');
-      // var featureLayer = L.mapbox.featureLayer()
-      // .loadURL('https://dl.dropboxusercontent.com/u/5653604/day1.geojson')
-      // .addTo(map);
+      var featureLayer = L.mapbox.featureLayer()
+      .loadURL('https://dl.dropboxusercontent.com/u/5653604/day1.geojson')
+      .addTo(map);
     </script>
   </body>
 </html>
