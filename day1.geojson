@@ -4,7 +4,7 @@
         {
             "type": "Feature",
             "properties": {
-                "stroke": #58ab5a,
+                "stroke": '#58ab5a',
                 "stroke-width": 3,
                 "name": "Day1: Pukerangi to Dansey's",
                 "time": "2015-02-04T23:04:43Z",
