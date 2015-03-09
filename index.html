@@ -14,9 +14,7 @@
     <script>
 
       L.mapbox.accessToken = 'pk.eyJ1IjoibWlnY29tIiwiYSI6ImNrUllYc3MifQ.isgDkadcGHvdQKkSC1ohfQ';
-      var map = L.mapbox.map('map-one', 'examples.map-i86l3621', {scrollWheelZoom: false, legendControl:{position: 'bottomright'}}).setView([45.54, -122.6879], 12);
-      var myLayer = L.mapbox.featureLayer().addTo(map);
-      myLayer.setGeoJSON(geoJson);
+      var map = L.mapbox.map('map-one', 'examples.map-i86l3621', {scrollWheelZoom: false, legendControl:{position: 'bottomright'}}).setView([170.457, -45.7388], 12);
       map.legendControl.addLegend('<strong>Legend content</strong>');
       var featureLayer = L.mapbox.featureLayer()
       .loadURL('https://raw.githubusercontent.com/steveleathers/YonderNZmap/gh-pages/day1.geojson')
