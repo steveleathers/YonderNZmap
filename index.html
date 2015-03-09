@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=utf-8 />
+    <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.css' rel='stylesheet' />
+      <style>
+        body { margin:0; padding:0; }
+        .map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+  </head>
+  <body>
+    <div id='map-one' class='map'> </div>
+    <script>
+      geoJson = [{
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -122.760366048812866,
+                45.549784666877921
+              ]
+            },
+            "properties": {
+              "title": "Forest Park",
+              "marker-color": "#9c89cc",
+              "marker-size": "medium",
+              "marker-symbol": "park"
+            }
+          }
+        ]
+      }];
+      L.mapbox.accessToken = 'pk.eyJ1IjoibWlnY29tIiwiYSI6ImNrUllYc3MifQ.isgDkadcGHvdQKkSC1ohfQ';
+      var map = L.mapbox.map('map-one', 'examples.map-i86l3621', {scrollWheelZoom: false, legendControl:{position: 'bottomright'}}).setView([45.54, -122.6879], 12);
+      var myLayer = L.mapbox.featureLayer().addTo(map);
+      myLayer.setGeoJSON(geoJson);
+      map.legendControl.addLegend('<strong>Legend content</strong>');
+    </script>
+  </body>
+</html>
