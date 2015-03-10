@@ -1,0 +1,19 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-symbol": "camera",
+        "url": "https://www.dropbox.com/s/ax14pt9ri04yaeb/midgey.jpg?dl=0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          169.63714599609375,
+          -44.17826452922574
+        ]
+      }
+    }
+  ]
+}
