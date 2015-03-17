@@ -14,8 +14,8 @@
     <script>
 
       L.mapbox.accessToken = 'pk.eyJ1IjoibWlnY29tIiwiYSI6ImNrUllYc3MifQ.isgDkadcGHvdQKkSC1ohfQ';
-      var map = L.mapbox.map('map-one', 'examples.map-igb471ik', {scrollWheelZoom: false, legendControl:{position: 'bottomright'}}).setView([-44.5689, 170.2568], 8);
-      
+      var map = L.mapbox.map('map-one', 'examples.map-igb471ik', {maxZoom: 10, minZoom: 5, opacity: 0.5, scrollWheelZoom: false, legendControl:{position: 'bottomright'}}).setView([-44.5689, 170.2568], 8);
+
       map.legendControl.addLegend('<strong>Legend</strong><br /><span style="color:#e41a1c;background-color:#ccc;">Day 1</span>: Pukerangi to Dansey\'s<br /><span style="color:#ff7f00;background-color:#ccc;">Day 2</span>: Dansey\'s to Ida Railway<br /><span style="color:#ffff33;background-color:#ccc;">Day 3</span>: Ida Railway to Omarama<br /><span style="color:#4daf4a;background-color:#ccc;">Day 4</span>: Omarama to Huxley Forks<br /><span style="color:#377eb8;background-color:#ccc;">Day 5</span>: Huxley Forks to Brodrick<br /><span style="color:#984ea3;background-color:#ccc;">Day 6</span>: Heli evac to Wanaka');
       var day1 = L.mapbox.featureLayer()
       .loadURL('https://dl.dropboxusercontent.com/u/5653604/day1.geojson')
