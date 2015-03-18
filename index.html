@@ -35,10 +35,6 @@
       var day6 = L.mapbox.featureLayer()
       .loadURL('https://dl.dropboxusercontent.com/u/5653604/day6.geojson')
       .addTo(map);
-      photos.eachLayer(function(layer) {
-          var content = '<p>From: ' + layer.feature.properties.description + '<br \/>';
-          layer.bindPopup(content);
-      });
 </script>
     </script>
   </body>
