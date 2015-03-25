@@ -1,3 +1,6 @@
 .map-image img{
 	max-width: 100%;
 }
+.map-image {
+	width: 65%;
+}
