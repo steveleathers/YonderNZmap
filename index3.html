@@ -34,12 +34,6 @@
 
         var map = new google.maps.Map(document.getElementById('map-canvas'),
             mapOptions);
-        // map.data.loadGeoJson('https://dl.dropboxusercontent.com/u/5653604/day1.geojson');
-        // map.data.loadGeoJson('https://dl.dropboxusercontent.com/u/5653604/day2.geojson');
-        map.data.loadGeoJson('https://dl.dropboxusercontent.com/u/5653604/day3.geojson');
-        map.data.loadGeoJson('https://dl.dropboxusercontent.com/u/5653604/day4.geojson');
-        map.data.loadGeoJson('https://dl.dropboxusercontent.com/u/5653604/day5.geojson');
-        map.data.loadGeoJson('https://dl.dropboxusercontent.com/u/5653604/day6.geojson');
 
         var dayOne = new google.maps.KmlLayer({
           url: 'https://dl.dropboxusercontent.com/u/5653604/day1.kml'
@@ -47,8 +41,24 @@
         var dayTwo = new google.maps.KmlLayer({
           url: 'https://dl.dropboxusercontent.com/u/5653604/day2.kml'
         });
+        var dayThree = new google.maps.KmlLayer({
+          url: 'https://dl.dropboxusercontent.com/u/5653604/day3.kml'
+        });
+        var dayFour = new google.maps.KmlLayer({
+          url: 'https://dl.dropboxusercontent.com/u/5653604/day4.kml'
+        });
+        var dayFive = new google.maps.KmlLayer({
+          url: 'https://dl.dropboxusercontent.com/u/5653604/day5.kml'
+        });
+        var daySix = new google.maps.KmlLayer({
+          url: 'https://dl.dropboxusercontent.com/u/5653604/day6.kml'
+        });
         dayOne.setMap(map);
         dayTwo.setMap(map);
+        dayThree.setMap(map);
+        dayFour.setMap(map);
+        dayFive.setMap(map);
+        daySix.setMap(map);
 
         var featureStyle = {
           fillColor: '#faafaf',
