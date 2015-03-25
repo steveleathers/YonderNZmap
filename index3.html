@@ -25,7 +25,6 @@
           maxZoom: 12,
           minZoom: 7,
           scrollwheel: false,
-          preserveViewport: true,
           mapTypeId: google.maps.MapTypeId.SATELLITE,
           // mapTypeControlOptions: {
           //   mapTypeIds: [google.maps.MapTypeId.SATELLITE, 'map_style']
@@ -38,27 +37,33 @@
 
         var dayOne = new google.maps.KmlLayer({
           url: 'https://dl.dropboxusercontent.com/u/5653604/day1.kml',
-          map: map
+          map: map,
+          preserveViewport: true
         });
         var dayTwo = new google.maps.KmlLayer({
           url: 'https://dl.dropboxusercontent.com/u/5653604/day2.kml',
-          map: map
+          map: map,
+          preserveViewport: true
         });
         var dayThree = new google.maps.KmlLayer({
           url: 'https://dl.dropboxusercontent.com/u/5653604/day3.kml',
-          map: map
+          map: map,
+          preserveViewport: true
         });
         var dayFour = new google.maps.KmlLayer({
           url: 'https://dl.dropboxusercontent.com/u/5653604/day4.kml',
-          map: map
+          map: map,
+          preserveViewport: true
         });
         var dayFive = new google.maps.KmlLayer({
           url: 'https://dl.dropboxusercontent.com/u/5653604/day5.kml',
-          map: map
+          map: map,
+          preserveViewport: true
         });
         var daySix = new google.maps.KmlLayer({
           url: 'https://dl.dropboxusercontent.com/u/5653604/day6.kml',
-          map: map
+          map: map,
+          preserveViewport: true
         });
 
 
