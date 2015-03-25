@@ -37,35 +37,30 @@
             mapOptions);
 
         var dayOne = new google.maps.KmlLayer({
-          url: 'https://dl.dropboxusercontent.com/u/5653604/day1.kml'
+          url: 'https://dl.dropboxusercontent.com/u/5653604/day1.kml',
+          map: map
         });
         var dayTwo = new google.maps.KmlLayer({
-          url: 'https://dl.dropboxusercontent.com/u/5653604/day2.kml'
+          url: 'https://dl.dropboxusercontent.com/u/5653604/day2.kml',
+          map: map
         });
         var dayThree = new google.maps.KmlLayer({
-          url: 'https://dl.dropboxusercontent.com/u/5653604/day3.kml'
+          url: 'https://dl.dropboxusercontent.com/u/5653604/day3.kml',
+          map: map
         });
         var dayFour = new google.maps.KmlLayer({
-          url: 'https://dl.dropboxusercontent.com/u/5653604/day4.kml'
+          url: 'https://dl.dropboxusercontent.com/u/5653604/day4.kml',
+          map: map
         });
         var dayFive = new google.maps.KmlLayer({
-          url: 'https://dl.dropboxusercontent.com/u/5653604/day5.kml'
+          url: 'https://dl.dropboxusercontent.com/u/5653604/day5.kml',
+          map: map
         });
         var daySix = new google.maps.KmlLayer({
-          url: 'https://dl.dropboxusercontent.com/u/5653604/day6.kml'
+          url: 'https://dl.dropboxusercontent.com/u/5653604/day6.kml',
+          map: map
         });
-        dayOne.setMap(map);
-        dayTwo.setMap(map);
-        dayThree.setMap(map);
-        dayFour.setMap(map);
-        dayFive.setMap(map);
-        daySix.setMap(map);
 
-        var featureStyle = {
-          fillColor: '#faafaf',
-          strokeWeight: 3
-        }
-        map.data.setStyle(featureStyle);
 
         // map.mapTypes.set('map_style', styledMap);
         // map.setMapTypeId('map_style');
