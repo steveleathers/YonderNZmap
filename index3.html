@@ -41,6 +41,12 @@
         map.data.loadGeoJson('https://dl.dropboxusercontent.com/u/5653604/day5.geojson');
         map.data.loadGeoJson('https://dl.dropboxusercontent.com/u/5653604/day6.geojson');
 
+        var featureStyle = {
+          fillColor: '#faafaf',
+          strokeWeight: 3
+        }
+        map.data.setStyle(featureStyle);
+
         // map.mapTypes.set('map_style', styledMap);
         // map.setMapTypeId('map_style');
       }
