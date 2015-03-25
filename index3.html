@@ -10,14 +10,14 @@
     <script type="text/javascript">
 
       function initialize() {
-        var styles = [{
-          stylers: [
-            { lightness: 30 }
-          ]
-        }];
+        // var styles = [{
+        //   stylers: [
+        //     { lightness: 30 }
+        //   ]
+        // }];
 
 
-        var styledMap = new google.maps.StyledMapType(styles, {name: "Styled Map"});
+        // var styledMap = new google.maps.StyledMapType(styles, {name: "Styled Map"});
 
         var mapOptions = {
           center: { lat: -44.862929, lng: 170.087861},
@@ -26,9 +26,9 @@
           minZoom: 7,
           scrollwheel: false,
           mapTypeId: google.maps.MapTypeId.SATELLITE,
-          mapTypeControlOptions: {
-            mapTypeIds: [google.maps.MapTypeId.SATELLITE, 'map_style']
-          },
+          // mapTypeControlOptions: {
+          //   mapTypeIds: [google.maps.MapTypeId.SATELLITE, 'map_style']
+          // },
           disableDefaultUI: true
         };
 
@@ -41,8 +41,8 @@
         map.data.loadGeoJson('https://dl.dropboxusercontent.com/u/5653604/day5.geojson');
         map.data.loadGeoJson('https://dl.dropboxusercontent.com/u/5653604/day6.geojson');
 
-        map.mapTypes.set('map_style', styledMap);
-        map.setMapTypeId('map_style');
+        // map.mapTypes.set('map_style', styledMap);
+        // map.setMapTypeId('map_style');
       }
       google.maps.event.addDomListener(window, 'load', initialize);
 
