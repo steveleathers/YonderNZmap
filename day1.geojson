@@ -4,6 +4,7 @@
         {
             "type": "Feature",
             "properties": {
+                "color": 'blue',
                 "stroke": '#58ab5a',
                 "stroke-width": 3,
                 "name": "Day1: Pukerangi to Dansey's",
