@@ -44,7 +44,11 @@
         var dayOne = new google.maps.KmlLayer({
           url: 'https://dl.dropboxusercontent.com/u/5653604/day1.kml'
         });
+        var dayTwo = new google.maps.KmlLayer({
+          url: 'https://dl.dropboxusercontent.com/u/5653604/day2.kml'
+        });
         dayOne.setMap(map);
+        dayTwo.setMap(map);
 
         var featureStyle = {
           fillColor: '#faafaf',
