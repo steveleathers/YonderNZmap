@@ -1,6 +1,6 @@
-.map-image, .gm-style-iw img{
+.map-image, div.gm-style-iw img{
 	max-width: 100%;
 }
-.map-image, .gm-style-iw {
+.map-image, div.gm-style-iw {
 	width: 65%;
 }
