@@ -43,7 +43,7 @@
       .loadURL('https://dl.dropboxusercontent.com/u/5653604/day6.geojson')
       .addTo(map);
       var photos = L.mapbox.featureLayer()
-      .loadURL('https://dl.dropboxusercontent.com/u/5653604/photos.geojson')
+      .loadURL('https://dl.dropboxusercontent.com/u/5653604/photosaggregate.geojson')
       .addTo(map);
       featureLayer.eachLayer(function(layer) {
           var content = '<h2>A ferry ride!<\/h2>' +
