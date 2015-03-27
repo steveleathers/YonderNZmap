@@ -82,8 +82,8 @@
           icon: 'https://dl.dropboxusercontent.com/u/5653604/CameraWhite30.png'
         });
         map.data.addListener('click', function(event) {
-                  var myHTML = event.feature.getProperty("Description");
-              infowindow.setContent("<div style='width:150px; text-align: center;'>"+myHTML+"</div>");
+                  var myHTML = event.feature.getProperty("description");
+              infowindow.setContent("<div class=\"map-image\">"+myHTML+"</div>");
                   infowindow.setPosition(event.feature.getGeometry().get());
               infowindow.setOptions({pixelOffset: new google.maps.Size(0,-30)});
                   infowindow.open(map);
