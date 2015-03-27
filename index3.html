@@ -5,6 +5,7 @@
     <style type="text/css">
       html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
     </style>
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
     <script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-5s3-hbMp9bmLMLBp0OOAxnzvo2eDQcY">
     </script>
@@ -83,7 +84,8 @@
         });
         map.data.addListener('click', function(event) {
                   var myHTML = event.feature.getProperty("description");
-              infowindow.setContent("<div class=\"map-image\">"+myHTML+"</div>");
+              infowindow.setContent(myHTML);
+              infowindow.parent().setClass("map-image");
                   infowindow.setPosition(event.feature.getGeometry().get());
               infowindow.setOptions({pixelOffset: new google.maps.Size(0,-30)});
                   infowindow.open(map);
