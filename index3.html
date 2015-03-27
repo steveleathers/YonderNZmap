@@ -65,12 +65,12 @@
           map: map,
           preserveViewport: true
         });
-        var photos = new google.maps.KmlLayer({
-          url: 'https://dl.dropboxusercontent.com/u/5653604/photosaggregate.kml',
-          map: map,
-          preserveViewport: true
-        });
-
+        // var photos = new google.maps.KmlLayer({
+        //   url: 'https://dl.dropboxusercontent.com/u/5653604/photosaggregate.kml',
+        //   map: map,
+        //   preserveViewport: true
+        // });
+        map.data.loadGeoJson('https://dl.dropboxusercontent.com/u/5653604/photosaggregate.geojson');
 
         // map.mapTypes.set('map_style', styledMap);
         // map.setMapTypeId('map_style');
