@@ -9,8 +9,15 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-5s3-hbMp9bmLMLBp0OOAxnzvo2eDQcY">
     </script>
     <script type="text/javascript">
-
+      var infowindow = new google.maps.InfoWindow();
+      function gotoFeature(featureNum) {
+          var feature = map.data.getFeatureById(features[featureNum].getId());
+          if (!!feature) google.maps.event.trigger(feature, 'changeto', {feature: feature});
+          else alert('feature not found!');
+      }
       function initialize() {
+
+        features=[];
         // var styles = [{
         //   stylers: [
         //     { lightness: 30 }
@@ -72,19 +79,15 @@
         // });
         map.data.loadGeoJson('https://dl.dropboxusercontent.com/u/5653604/photosaggregate.geojson');
         map.data.setStyle({
-          icon: 'https://dl.dropboxusercontent.com/u/5653604/CameraWhite30.png',
-          icon: 'https://dl.dropboxusercontent.com/u/5653604/CameraWhite30.png',
-          icon: 'https://dl.dropboxusercontent.com/u/5653604/CameraWhite30.png',
-          icon: 'https://dl.dropboxusercontent.com/u/5653604/CameraWhite30.png',
-          icon: 'https://dl.dropboxusercontent.com/u/5653604/CameraWhite30.png',
-          icon: 'https://dl.dropboxusercontent.com/u/5653604/CameraWhite30.png',
-          icon: 'https://dl.dropboxusercontent.com/u/5653604/CameraWhite30.png',
-          icon: 'https://dl.dropboxusercontent.com/u/5653604/CameraWhite30.png',
-          icon: 'https://dl.dropboxusercontent.com/u/5653604/CameraWhite30.png',
-          icon: 'https://dl.dropboxusercontent.com/u/5653604/CameraWhite30.png',
           icon: 'https://dl.dropboxusercontent.com/u/5653604/CameraWhite30.png'
         });
-
+        map.data.addListener('click', function(event) {
+                  var myHTML = event.feature.getProperty("Description");
+              infowindow.setContent("<div style='width:150px; text-align: center;'>"+myHTML+"</div>");
+                  infowindow.setPosition(event.feature.getGeometry().get());
+              infowindow.setOptions({pixelOffset: new google.maps.Size(0,-30)});
+                  infowindow.open(map);
+          });
         // var infowindow = new google.maps.InfoWindow();
         // map.data.addListener('click', function(event) {
         //  var myHTML = event.feature.getProperty("Description");
