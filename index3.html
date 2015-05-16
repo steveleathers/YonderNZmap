@@ -10,12 +10,6 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-5s3-hbMp9bmLMLBp0OOAxnzvo2eDQcY">
     </script>
     <script type="text/javascript">
-      var infowindow = new google.maps.InfoWindow();
-      function gotoFeature(featureNum) {
-          var feature = map.data.getFeatureById(features[featureNum].getId());
-          if (!!feature) google.maps.event.trigger(feature, 'changeto', {feature: feature});
-          else alert('feature not found!');
-      }
       function initialize() {
 
         features=[];
