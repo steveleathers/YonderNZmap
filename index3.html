@@ -27,6 +27,100 @@
 
 
         // var styledMap = new google.maps.StyledMapType(styles, {name: "Styled Map"});
+        var photoLocations = [
+
+              //this is the output for each, added to final string above
+              ['<img src="http://yonderjournal.com/wp-content/uploads/2015/05/YJ_Bolivia_Map-1.jpg" alt="">', -14.818719,-69.072333],
+
+
+              //this is the output for each, added to final string above
+              ['<img src="http://yonderjournal.com/wp-content/uploads/2015/05/YJ_Bolivia_Map-2.jpg" alt="">', -14.834992,-69.058975],
+
+
+              //this is the output for each, added to final string above
+              ['<img src="http://yonderjournal.com/wp-content/uploads/2015/05/YJ_Bolivia_Map-3.jpg" alt="">', -14.849706,-69.056900],
+
+
+              //this is the output for each, added to final string above
+              ['<img src="http://yonderjournal.com/wp-content/uploads/2015/05/YJ_Bolivia_Map-4.jpg" alt="">', -14.873169,-69.045650],
+
+
+              //this is the output for each, added to final string above
+              ['<img src="http://yonderjournal.com/wp-content/uploads/2015/05/YJ_Bolivia_Map-5.jpg" alt="">', -14.868047,-69.045594],
+
+
+              //this is the output for each, added to final string above
+              ['<img src="http://yonderjournal.com/wp-content/uploads/2015/05/YJ_Bolivia_Map-6.jpg" alt="">', -14.876003,-69.276733],
+
+
+              //this is the output for each, added to final string above
+              ['<img src="http://yonderjournal.com/wp-content/uploads/2015/05/YJ_Bolivia_Map-7.jpg" alt="">', -14.923017,-69.028092],
+
+
+              //this is the output for each, added to final string above
+              ['<img src="http://yonderjournal.com/wp-content/uploads/2015/05/YJ_Bolivia_Map-8.jpg" alt="">', -14.955325,-69.295647],
+
+
+              //this is the output for each, added to final string above
+              ['<img src="http://yonderjournal.com/wp-content/uploads/2015/05/YJ_Bolivia_Map-9.jpg" alt="">', -14.955411,-69.020861],
+
+
+              //this is the output for each, added to final string above
+              ['<img src="http://yonderjournal.com/wp-content/uploads/2015/05/YJ_Bolivia_Map-10.jpg" alt="">', -14.997247,-68.997039],
+
+
+              //this is the output for each, added to final string above
+              ['<img src="http://yonderjournal.com/wp-content/uploads/2015/05/YJ_Bolivia_Map-11.jpg" alt="">', -15.007053,-68.976294],
+
+
+              //this is the output for each, added to final string above
+              ['<img src="http://yonderjournal.com/wp-content/uploads/2015/05/YJ_Bolivia_Map-12.jpg" alt="">', -15.018303,-68.968256],
+
+
+              //this is the output for each, added to final string above
+              ['<img src="http://yonderjournal.com/wp-content/uploads/2015/05/YJ_Bolivia_Map-13.jpg" alt="">', -15.047422,-68.968986],
+
+
+              //this is the output for each, added to final string above
+              ['<img src="http://yonderjournal.com/wp-content/uploads/2015/05/YJ_Bolivia_Map-14.jpg" alt="">', -15.053011,-68.976600],
+
+
+              //this is the output for each, added to final string above
+              ['<img src="http://yonderjournal.com/wp-content/uploads/2015/05/YJ_Bolivia_Map-15.jpg" alt="">', -15.081253,-69.018239],
+
+
+              //this is the output for each, added to final string above
+              ['<img src="http://yonderjournal.com/wp-content/uploads/2015/05/YJ_Bolivia_Map-16.jpg" alt="">', -15.115619,-69.197467],
+
+
+              //this is the output for each, added to final string above
+              ['<img src="http://yonderjournal.com/wp-content/uploads/2015/05/YJ_Bolivia_Map-17.jpg" alt="">', -15.115822,-69.000933],
+
+
+              //this is the output for each, added to final string above
+              ['<img src="http://yonderjournal.com/wp-content/uploads/2015/05/YJ_Bolivia_Map-18.jpg" alt="">', -15.123536,-69.002297],
+
+
+              //this is the output for each, added to final string above
+              ['<img src="http://yonderjournal.com/wp-content/uploads/2015/05/YJ_Bolivia_Map-19.jpg" alt="">', -15.177083,-68.994858],
+
+              ]; //end locations var
+
+        //setup the center point of the map
+        var myLatlng = new google.maps.LatLng(-14.955411, -69.020861);
+
+        //setup other map options
+        var mapOptions = {
+          zoom: 8,
+          center: myLatlng,
+          maxZoom: 20,
+          minZoom: 7,
+          scrollwheel: false,
+          mapTypeId: google.maps.MapTypeId.TERRAIN,
+          };
+
+        //setup the default marker image with retina sizing
+        var image1 = new google.maps.MarkerImage("http://yonderjournal.com/wp-content/themes/Yonder%20Journal/inc/img/map.marker1.png", null, null, null, new google.maps.Size(31,34));
 
         var mapOptions = {
           center: { lat: -15, lng: -69},
@@ -100,8 +194,54 @@
         // });
         // map.mapTypes.set('map_style', styledMap);
         // map.setMapTypeId('map_style');
+        var infowindow = new google.maps.InfoWindow({
+          maxWidth: 280
+        });
 
+        //marker vars
+        var marker, i;
+
+        for (i = 0; i < photoLocations.length; i++) {
+          marker = new google.maps.Marker({
+            position: new google.maps.LatLng(photoLocations[i][1], photoLocations[i][2]),
+            map: map,
+            icon: image1
+          });
+
+          google.maps.event.addListener(marker, 'click', (function(marker, i) {
+            return function() {
+              infowindow.setContent(photoLocations[i][0]);
+              infowindow.open(map, marker);
+              $('.gm-style-iw').parent().addClass('info-window');
+              if ($(window).width() > 736) {
+                $('.info-window').parent().css({left: '149px', top:  '9px'});
+              } else {
+                $('.info-window').parent().css({left: '104px', top:  '8px'});
+              }
+            }
+          })(marker, i));
+        }
+
+        google.maps.event.addDomListener(window, "resize", function() {
+         var center = map.getCenter();
+         google.maps.event.trigger(map, "resize");
+         map.setCenter(center);
+        });
+
+
+        } // end initialize
+
+        function loadScript() {
+          var script = document.createElement('script');
+          script.type = 'text/javascript';
+          script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&' +
+              'callback=initialize';
+          document.body.appendChild(script);
+        }
+
+        window.onload = loadScript;
       }
+
       google.maps.event.addDomListener(window, 'load', initialize);
 
     </script>
